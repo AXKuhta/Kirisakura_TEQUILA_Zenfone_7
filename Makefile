@@ -990,6 +990,10 @@ include scripts/Makefile.kasan
 include scripts/Makefile.extrawarn
 include scripts/Makefile.ubsan
 
+# Set the -mcpu and -mtune optimizations
+KBUILD_CFLAGS   += -mcpu=cortex-a55+crc+crypto
+KBUILD_CFLAGS   += -mtune=cortex-a55+crc+crypto
+
 # Add any arch overrides and user supplied CPPFLAGS, AFLAGS and CFLAGS as the
 # last assignments
 KBUILD_CPPFLAGS += $(ARCH_CPPFLAGS) $(KCPPFLAGS)
